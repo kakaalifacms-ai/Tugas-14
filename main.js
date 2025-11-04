@@ -12,10 +12,18 @@ function hitung() {
   let subtotal = Harga*jumlah 
   
   // Langkah 2:menghitung diskon
-  // Langkah 3:menghitung pajak
+  let potongan = subtotal*(diskon / 100)
+  // Langkah 3:menghitung pajak, misal 11%
+  let pajak = subtotal*(diskon / 100)
+  
   // Langkah 4:Hitung total
+  let total = subtotal-potongan+pajak
   
   // Langkah 5: menampilkan hasil
-  document.getElementById("hasil").innerHTML=`Subtotal:Rp ${subtotal}<br>`
-  
+  document.getElementById("hasil").innerHTML=
+  `Subtotal:Rp ${subtotal}<br>
+   diskon (${diskon}%): -Rp ${potongan}<br>
+   pajak (11%) : +Rp ${pajak} <br>
+   Total bayar : Rp ${total}
+  `
 }
